@@ -4,7 +4,7 @@ Project:    lord_ruler
 Project Description:
     A rule-based system which can add, subtract, and modify facts from a knowledge base using a set of rules.
     WISH: It can add, subtract, and modify rules as well as facts.
-File:       metalmind.py
+File:       lordruler.py
 File Description:
     Describes the metalmind class, which details how the knowledge and rule bases are stored as well as the operations
     that can be performed on them.
@@ -12,10 +12,12 @@ File Description:
     format.
     Facts are stored in simple single string format.
     Wish list idea: put the actions of the rules in python code and exec() it.
+    Wish list idea: add and & not rule types.
+    Wish list idea: detect contradictions & fix by removing old facts.
 """
 
 
-class Metalmind:
+class LordRuler:
     def __init__(self, rulefile, factfile):
         self.rulebase = []   # List of rules.
         self.knowledge = []  # List of facts.
@@ -70,7 +72,7 @@ class Metalmind:
 
 
 if __name__ == "__main__":
-    mind = Metalmind("basic.rules", "basic.facts")
+    mind = LordRuler("basic.rules", "basic.facts")
 
     # Print out the initial fact and rule bases
     print("Rules:")
